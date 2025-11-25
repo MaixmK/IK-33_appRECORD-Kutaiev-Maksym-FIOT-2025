@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- ШАПКА -->
   <header class="page-header">
     <div class="container header-top">
       <div class="title-block">
@@ -15,26 +14,27 @@
         <div class="title-2">З ДИСЦИПЛІНИ «WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. FRONTEND РОЗРОБКИ»</div>
         <div class="subtitle">Виконавець : Студент групи ІК-33 — Кутаєв Максим Олександрович</div>
       </div>
-        <div class="photo-wrap">
-          <img src="img/student.jpg" alt="Фото студента" />
-        </div>
+      <div class="photo-wrap">
+        <img src="img/student.jpg" alt="Фото студента" />
+      </div>
     </div>
 
     <nav class="container top-nav" id="topNav">
-      <button class="tab active" data-lab="1"><span>Лабораторна<br/>робота №1</span></button>
-      <button class="tab" data-lab="2"><span>Лабораторна<br/>робота №2</span></button>
-      <button class="tab" data-lab="3"><span>Лабораторна<br/>робота №3</span></button>
-      <button class="tab" data-lab="4"><span>Лабораторна<br/>робота №4</span></button>
-      <button class="tab" data-lab="5"><span>Лабораторна<br/>робота №5</span></button>
-      <button class="tab" data-lab="6"><span>Лабораторна<br/>робота №6</span></button>
-      <button class="tab" data-lab="7"><span>Лабораторна<br/>робота №7</span></button>
-      <button class="tab" data-lab="8"><span>Лабораторна<br/>робота №8</span></button>
-      <button class="tab" data-lab="9"><span>Лабораторна<br/>робота №9</span></button>
+      <button class="tab active" data-lab="1"><span>Практична<br/>робота №1</span></button>
+      <button class="tab" data-lab="2"><span>Практична<br/>робота №2</span></button>
+      <button class="tab" data-lab="3"><span>Практична<br/>робота №3</span></button>
+      <button class="tab" data-lab="4"><span>Практична<br/>робота №4</span></button>
+      <button class="tab" data-lab="5"><span>Практична<br/>робота №5</span></button>
+      <button class="tab" data-lab="6"><span>Практична<br/>робота №6</span></button>
+      <button class="tab" data-lab="7"><span>Практична<br/>робота №7</span></button>
+      <button class="tab" data-lab="8"><span>Практична<br/>робота №8</span></button>
+      <button class="tab" data-lab="9"><span>Практична<br/>робота №9</span></button>
     </nav>
   </header>
 
   <main class="container main-grid">
-    <aside class="side-menu" id="sideMenu">
+    <!-- Меню ПР1 -->
+    <aside class="side-menu" id="sideMenuLab1">
       <button class="pill active" data-section="theme">Тема Мета Місце<br/>розташування сайту, звіту</button>
       <button class="pill" data-section="env">Опис предметного середовища.<br/>Опис бізнес-логіки</button>
       <button class="pill" data-section="structure">Структура документа</button>
@@ -44,6 +44,19 @@
       <button class="pill" data-section="html-li">HTML-код списки</button>
       <button class="pill" data-section="conclusion">ВИСНОВКИ</button>
     </aside>
+
+    <!-- Меню ПР2 -->
+    <aside class="side-menu" id="sideMenuLab2" style="display:none">      
+  <button class="pill active" data-section="theme">Тема Мета Розташування</button>
+    <button class="pill" data-section="theory">Способи підключення стилів</button>
+  <button class="pill" data-section="sel-tags">1. Селектори тегу</button>
+  <button class="pill" data-section="sel-classes">2. Селектори класів</button>
+  <button class="pill" data-section="sel-id">3. Селектори ідентифікаторів</button>
+  <button class="pill" data-section="sel-other">4. Інші селектори</button>
+  <button class="pill" data-section="css-pack">5–6. CSS: Шрифти Текст Таблиці Фон Контур Списки Pros</button>
+  <button class="pill" data-section="final">Висновки</button>
+</aside>
+
 
     <section class="content" id="content">
       <div class="placeholder">Місце виведення інформації</div>
