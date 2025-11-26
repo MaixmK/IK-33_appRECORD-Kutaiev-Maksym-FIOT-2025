@@ -11,7 +11,7 @@
       .replaceAll('<', '&lt;')
       .replaceAll('>', '&gt;')}</pre>`;
 
-const lab1 = {
+  const lab1 = {
     // Тема/мета/розташування
 theme: `
   <h2>Практична робота №1 — Тема, мета, розташування</h2>
@@ -1110,6 +1110,567 @@ body {
   `
   };
 
+  const lab3 = {
+    // Тема/мета/розташування
+    theme3: `
+      <h2>Лабораторна робота №3 — Тема, мета, розташування</h2>
+
+      <p><b>Тема лабораторної роботи:</b>
+      РОЗРОБЛЕННЯ АДАПТИВНОГО ІНТЕРФЕЙСУ ВЕБ-ЗАСТОСУНКУ. МЕДІА-ЗАПИТИ. FLEXBOX/GRID. АНІМАЦІЇ.</p>
+
+      <p><b>Мета лабораторної роботи:</b>
+      набути практичних навичок створення адаптивної навігації (бургер-меню),
+      адаптивної сітки контенту, використання медіа-запитів та анімацій.</p>
+
+      <p><b>Тема розробки:</b> адаптивний веб-застосунок <i>«Конфігуратор ПК»</i>.</p>
+
+      <h3 class="muted">Розташування (репозиторії)</h3>
+      <div class="link-buttons">
+        <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
+          Репозиторій власного веб-застосунку
+        </a>
+        <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
+          Репозиторій HTML звітного документа
+        </a>
+        <a class="btn" href="https://github.com/MaixmK/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
+          Репозиторій самостійних робіт
+        </a>
+      </div>
+
+      <h3 class="muted">Розташування (живі сторінки)</h3>
+      <div class="link-buttons">
+        <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
+          Жива сторінка власного сайту
+        </a>
+        <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
+          Жива сторінка HTML звітного документа
+        </a>
+        <a class="btn" href="https://maixmk.github.io/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
+          Жива сторінка самостійних робіт
+        </a>
+      </div>
+    `,
+    site:`
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
+          Репозиторій власного веб-застосунку
+        </a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
+          Жива сторінка власного сайту
+    </a>
+    <img src="img/site.jpg" width = 100% alt="Скрін головної сторінки веб-застосунку">
+    `,
+    // ===== Завдання №2 – фіксована таблична верстка =====
+    tableFixed: `
+<!DOCTYPE html>
+<html>
+      <head>
+        <title> Фіксована таблична верстка </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 800px;
+    }
+
+    td {
+        padding: 5px;
+        border: 2px solid black;
+        text-align: center;
+    }
+
+    .cont2345 {
+        display: flex;
+    }
+
+    .inner-table {
+        height: 50px;
+        width: 780px;
+        border: 2px;
+    }
+
+    .inrercontainer {
+        background-color: rgb(245, 253, 255);
+        height: 50px;
+        width: 220px;
+    }
+
+    .innrefist {
+        border-color:  rgb(255, 233, 35);;
+        background-color: rgb(255, 233, 35);
+        text-align: right;
+        height: 50px;
+        padding-right: 150px;
+        width: 300px;
+    }
+
+    .first {
+        background-color: rgb(255, 233, 35);
+        height: 100px;
+        text-align: right;
+    }
+
+    .two {
+        background-color: rgb(73, 119, 255);
+        height: 550px;
+        width: 180px;
+        margin-right: 20px;
+    }
+
+    .tree {
+        background-color: rgb(232, 71, 71);
+        height: 550px;
+        width: 180px;
+        margin-right: 20px
+    }
+
+    .four {
+        background-color: rgb(255, 245, 245);
+        height: 550px;
+        width: 180px;
+        margin-right: 20px;
+    }
+
+    .five {
+        background-color: rgb(232, 71, 71);
+        height: 550px;
+        width: 180px;
+    }
+
+    .six {
+        background-color: rgb(255, 233, 35);
+        height: 100px;
+        text-align: left;
+        padding-left: 150px;
+    }
+          </style>
+          </head>
+          <body>
+            <table border =  "1" cellpadding = "5">
+              <tr>
+                <td class="first" colspan =  "5">
+                    <table class="inner-table">
+                        <tr>
+                            <td class="inrercontainer"> </td>
+                            <td class="innrefist"> 1 </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr>
+              <tr class="cont2345">
+                <td class="two"> 2 </td>
+                <td class="tree"> 3 </td>
+                <td class="four"> 4 </td>
+                <td class="five"> 5 </td>
+              </tr>
+              <tr>
+                <td class="six" colspan =  "4"> 6 </td>
+              </tr>
+            </table>
+          </body>
+    </html>
+    `,
+
+    // ===== Завдання №2 – гумова таблична верстка =====
+    tableFluid: `
+      <h2>Завдання №2 — таблична верстка (гумова)</h2>
+      <p>Версія макета з <b>гумовою табличною версткою</b> — ширина в %, макс. ширина обмежена.</p>
+
+      <!DOCTYPE html>
+<html>
+      <head>
+        <title> Гумова таблична верстка </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 10px;
+    width: 99%;
+    height: 96vh;
+}
+
+td {
+    padding: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.cont2345 {
+    display: flex;
+    height: 100%;
+}
+
+.inner-table {
+    height: 70%;
+    border: 2px;
+}
+
+.inrercontainer {
+    background-color: rgb(245, 253, 255);
+    width: 20%;
+}
+
+.innrefist {
+    border-color:  rgb(255, 233, 35);
+    background-color: rgb(255, 233, 35);
+    text-align: right;
+    padding-right: 150px;
+    width: 80%;
+}
+
+.first {
+    background-color: rgb(255, 233, 35);
+    height: 15%;
+    text-align: right;
+}
+
+.two {
+    background-color: rgb(73, 119, 255);
+    height: 98%;
+    width: 25%;
+    margin-right: 20px;
+}
+
+.tree {
+    background-color: rgb(232, 71, 71);
+    height: 98%;
+    width: 25%;
+    margin-right: 20px
+}
+
+.four {
+    background-color: rgb(255, 245, 245);
+    height: 98%;
+    width: 25%;
+    margin-right: 20px;
+}
+
+.five {
+    background-color: rgb(232, 71, 71);
+    height: 98%;
+    width: 25%;
+}
+
+.six {
+    background-color: rgb(255, 233, 35);
+    height: 15%;
+    text-align: left;
+    padding-left: 150px;
+}
+      </style>
+      </head>
+      <body>
+        <table border =  "1" cellpadding = "5">
+          <tr>
+            <td class="first" colspan =  "5">
+                <table class="inner-table">
+                    <tr>
+                        <td class="inrercontainer"> </td>
+                        <td class="innrefist"> 1 </td>
+                    </tr>
+                </table>
+            </td>
+          </tr>
+          <tr class="cont2345">
+            <td class="two"> 2 </td>
+            <td class="tree"> 3 </td>
+            <td class="four"> 4 </td>
+            <td class="five"> 5 </td>
+          </tr>
+          <tr>
+            <td class="six" colspan =  "4"> 6 </td>
+          </tr>
+        </table>
+      </body>
+</html>
+    `,
+
+    // ===== Завдання №2 – фіксована блокова (float) =====
+    floatFixed: `
+      <h2>Завдання №1 — блокова верстка (фіксована, float)</h2>
+      <p>Той самий макет, але реалізований за допомогою <b>блоків із плаваючими елементами (float)</b>.</p>
+
+
+      <head>
+        <title> Фіксована блокова верстка </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+}
+
+.mainblock {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 790px;
+    border: 2px solid black;
+}
+
+.topblock {
+    background-color: rgb(255, 233, 35);
+    border: 2px solid black;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 70px;
+}
+
+.inercontainer {
+    background-color: rgb(245, 253, 255);
+    border: 2px solid black;
+    height: 50px;
+    width: 200px;
+}
+
+.first {
+    text-align: right;
+    height: 50px;
+    padding-right: 150px;
+    width: 300px;
+}
+
+.cont2345 {
+    display: flex;
+}
+
+
+
+.two {
+    background-color: rgb(73, 119, 255);
+    height: 550px;
+    width: 180px;
+    margin-right: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.tree {
+    background-color: rgb(232, 71, 71);
+    border: 2px solid black;
+    height: 550px;
+    width: 180px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.four {
+    background-color: rgb(255, 245, 245);
+    border: 2px solid black;
+    height: 550px;
+    width: 180px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.five {
+    background-color: rgb(232, 71, 71);
+    border: 2px solid black;
+    height: 550px;
+    width: 180px;
+    text-align: center;
+}
+
+.six {
+    background-color: rgb(255, 233, 35);
+    border: 2px solid black;
+    height: 100px;
+    text-align: center;
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+          </style>
+      </head>
+      <body>
+
+        <div class="mainblock">
+            <div class="topblock">
+                <div class="inercontainer"> </div>
+                1
+            </div>
+            
+            <div class="cont2345">
+                <div class="two">2</div>
+                <div class="tree">3</div>
+                <div class="four">4</div>
+                <div class="five">5</div>
+            </div>
+            
+            <div class="six">6</div>
+            
+            </body>
+        </div>
+
+    `,
+
+    // ===== Завдання №2 – гумова блокова (float) =====
+    floatFluid: `
+      <h2>Завдання №1 — блокова верстка (гумова, float)</h2>
+      <p>Гумова версія блокової верстки — контейнер тягнеться на 100% ширини з обмеженням max-width.</p>
+
+      <!DOCTYPE html>
+<html>
+      <head>
+        <title> Гумова блокова верстка </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+}
+
+.mainblock {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 99%;
+    height: 96vh;
+    border: 2px solid black;
+}
+
+.topblock {
+    background-color: rgb(255, 233, 35);
+    border: 2px solid black;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 70px;
+}
+
+.inercontainer {
+    background-color: rgb(245, 253, 255);
+    border: 2px solid black;
+    height: 60%;
+    width: 20%;
+}
+
+.first {
+    text-align: right;
+    height: 50px;
+    padding-right: 150px;
+    width: 300px;
+}
+
+.cont2345 {
+    display: flex;
+    height: 70%;
+}
+
+
+
+.two {
+    background-color: rgb(73, 119, 255);
+    height: 100%;
+    width: 25%;
+    margin-right: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.tree {
+    background-color: rgb(232, 71, 71);
+    border: 2px solid black;
+    height: 100%;
+    width: 25%;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.four {
+    background-color: rgb(255, 245, 245);
+    border: 2px solid black;
+    height: 100%;
+    width: 25%;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.five {
+    background-color: rgb(232, 71, 71);
+    border: 2px solid black;
+    height: 100%;
+    width: 25%;
+    text-align: center;
+}
+
+.six {
+    background-color: rgb(255, 233, 35);
+    border: 2px solid black;
+    height: 15%;
+    text-align: center;
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+          </style>
+      </head>
+      <body>
+
+        <div class="mainblock">
+            <div class="topblock">
+                <div class="inercontainer"> </div>
+                1
+            </div>
+            
+            <div class="cont2345">
+                <div class="two">2</div>
+                <div class="tree">3</div>
+                <div class="four">4</div>
+                <div class="five">5</div>
+            </div>
+            
+            <div class="six">6</div>
+            
+            </body>
+        </div>
+</html>
+    `,
+
+    z3:`
+    Виконане завдання №3
+    <a class="btn" href="https://github.com/MaixmK/Web-lab3-task3-main-main" target="_blank" rel="noopener">
+         Репозиторій сайту
+    </a>
+    <a class="btn" href="https://maixmk.github.io/Web-lab3-task3-main-main/" target="_blank" rel="noopener">
+         Жива сторінка сайту
+    </a>
+    <img src="img/z3.jpg" width = 100% alt="Скрін завдання №3">
+    `,
+    final:`
+    У ході виконання лабораторної роботи №3 я отримав комплексне розуміння принципів верстки веб-інтерфейсів та їх адаптації під різні типи пристроїв. Було опрацьовано декілька підходів до побудови макетів: таблична верстка, блокова верстка з використанням плаваючих елементів та сучасна адаптивна верстка на основі Flexbox. Для кожного з підходів я створив окремі реалізації як у фіксованому, так і в гумовому варіантах, що дозволило порівняти їхні переваги та недоліки.
+
+Окрему увагу я приділив створенню адаптивного дизайну, використавши систему медіа-запитів та логічні оператори CSS. Для десктопної, планшетної та мобільної версій були розроблені індивідуальні правила стилізації, які забезпечують коректне відображення інтерфейсу на різних розмірах екранів. Також реалізовано адаптивне навігаційне меню (бургер-меню), що автоматично активується на малих ширинах пристрою.
+    `,
+  };
+
+
 
   function setActiveTab(id) {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.lab === String(id)));
@@ -1124,21 +1685,29 @@ body {
 
     sideMenuLab1.style.display = (labId === 1) ? 'block' : 'none';
     sideMenuLab2.style.display = (labId === 2) ? 'block' : 'none';
+    sideMenuLab3.style.display = (labId === 3) ? 'block' : 'none';
 
-    if (labId !== 1 && labId !== 2) {
+    if (labId !== 1 && labId !== 2 && labId !== 3) {
       content.innerHTML = `<h2>Лабораторна робота №${labId}</h2><p>Матеріали будуть додані пізніше.</p>`;
       return;
     }
 
-    const secDefault = (labId === 1) ? 'theme' : 'sel-tags';
+    const secDefault =
+      labId === 1 ? 'theme' :
+      labId === 2 ? 'sel-tags' :
+      'theme3';
+
     const sec = section || secDefault;
 
     if (labId === 1) {
       setActivePill(sideMenuLab1, sec);
       content.innerHTML = lab1[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
-    } else {
+    } else if (labId === 2) {
       setActivePill(sideMenuLab2, sec);
       content.innerHTML = lab2[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
+    } else if (labId === 3) {
+      setActivePill(sideMenuLab3, sec);
+      content.innerHTML = lab3[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
     }
   }
 
@@ -1172,6 +1741,23 @@ body {
     const btn = e.target.closest('.pill'); if (!btn) return;
     navigate(2, btn.dataset.section, true);
   });
+
+  sideMenuLab3.addEventListener('click', (e) => {
+  const btn = e.target.closest('button'); 
+  if (!btn) return;
+
+  if (btn.classList.contains('pill-parent')) {
+    const key = btn.dataset.toggle;
+    const sub = sideMenuLab3.querySelector(`.sub-menu[data-parent="${key}"]`);
+    if (sub) sub.classList.toggle('open');
+    return;
+  }
+
+  if (btn.classList.contains('pill') && btn.dataset.section) {
+    navigate(3, btn.dataset.section, true);
+  }
+});
+
 
   window.addEventListener('popstate', () => {
     const params = new URLSearchParams(location.search);

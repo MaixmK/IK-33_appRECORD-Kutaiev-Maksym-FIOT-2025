@@ -76,3 +76,30 @@ table.demo thead{background:#f3f4f6}
 /* кнопки-посилання */
 .link-buttons{display:flex;flex-direction:column;gap:8px;max-width:420px;margin-top:8px}
 .link-buttons .btn{display:block;padding:10px 12px;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:inherit}
+
+
+/* підменю в ЛР3 */
+.sub-menu{
+  margin-left: 12px;
+  margin-top: 4px;
+  display: none;              /* спочатку приховано */
+}
+
+.sub-menu.open{
+  display: block;
+}
+
+.pill-sub{
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 16px;
+}
+
+.pill-parent{
+  position: relative;
+}
+
+/* невеликий візуальний відступ, щоб було видно ієрархію */
+.pill-sub + .pill-sub{
+  margin-top: 6px;
+}

@@ -57,7 +57,42 @@
   <button class="pill" data-section="final">Висновки</button>
 </aside>
 
+<!-- Меню ПР3 -->
+<aside class="side-menu" id="sideMenuLab3" style="display:none">
+  <button class="pill active" data-section="theme3">
+    Тема Мета Місце
+  </button>
 
+  <button class="pill active" data-section="site">
+    Макет сайту
+  </button>
+  <!-- Головна кнопка Завдання 2-->
+  <button class="pill pill-parent" data-section="site" data-toggle="task1">
+    Завдання №2 — макет сторінки
+  </button>
+
+  <!-- Підменю Завдання 2 -->
+  <div class="sub-menu" data-parent="task1">
+    <button class="pill pill-sub" data-section="tableFixed">
+      1. Таблична верстка (фіксована)
+    </button>
+    <button class="pill pill-sub" data-section="tableFluid">
+      2. Таблична верстка (гумова)
+    </button>
+    <button class="pill pill-sub" data-section="floatFixed">
+      3. Блокова (float) фіксована
+    </button>
+    <button class="pill pill-sub" data-section="floatFluid">
+      4. Блокова (float) гумова
+    </button>
+  </div>
+  <button class="pill active" data-section="z3">
+    Завдання 3
+  </button>
+  <button class="pill active" data-section="final">
+    Висновок
+  </button>
+</aside>
     <section class="content" id="content">
       <div class="placeholder">Місце виведення інформації</div>
     </section>
