@@ -2,9 +2,12 @@
   const tabs = Array.from(document.querySelectorAll('.top-nav .tab'));
   const sideMenuLab1 = document.getElementById('sideMenuLab1');
   const sideMenuLab2 = document.getElementById('sideMenuLab2');
+  const sideMenuLab3 = document.getElementById('sideMenuLab3');
+  const sideMenuLab4 = document.getElementById('sideMenuLab4');
+  const sideMenuLab5 = document.getElementById('sideMenuLab5');
+  const sideMenuLab6 = document.getElementById('sideMenuLab6');
   const content = document.getElementById('content');
 
-  // ===== Хелпер для безпечного показу HTML/CSS-коду =====
   const codeBlock = (s) =>
     `<pre class="code">${String(s)
       .replaceAll('&', '&amp;')
@@ -327,7 +330,6 @@ conclusion: `
 
   };
 
-    // ===================== ПР2: =====================
   const lab2 = {
 
     theme: `
@@ -1113,7 +1115,7 @@ body {
   const lab3 = {
     // Тема/мета/розташування
     theme3: `
-      <h2>Лабораторна робота №3 — Тема, мета, розташування</h2>
+      <h2>Практична робота №3 — Тема, мета, розташування</h2>
 
       <p><b>Тема лабораторної роботи:</b>
       РОЗРОБЛЕННЯ АДАПТИВНОГО ІНТЕРФЕЙСУ ВЕБ-ЗАСТОСУНКУ. МЕДІА-ЗАПИТИ. FLEXBOX/GRID. АНІМАЦІЇ.</p>
@@ -1670,6 +1672,1447 @@ body {
     `,
   };
 
+  const lab4 = {
+  // 4.1 Тема, мета, розташування
+  theme4: `
+    <h2>Практична робота №4 — Тема, мета, розташування</h2>
+
+    <p><b>Тема практичної роботи:</b>
+      ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ. УМОВНІ ОПЕРАТОРИ, ФУНКЦІЇ, МАСИВИ.
+    </p>
+
+    <p><b>Мета практичної роботи:</b>
+      набути практичних навичок використання мови JavaScript в HTML-документі:
+      роботи з умовами, циклами, функціями, масивами, а також створення
+      невеликого інтерактивного застосунку (калькулятора).
+    </p>
+
+    <p><b>Тема розробки:</b> реалізація набору скриптів для розв’язання задач 1–8
+      та інтерактивного калькулятора (завдання 9).
+    </p>
+
+    <h3 class="muted">Розташування</h3>
+
+    <div class="link-buttons">
+      <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
+        Репозиторій WEB-застосунку
+      </a>
+      <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
+        Жива сторінка WEB-застосунку
+      </a>
+      <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
+        Репозиторій звітного HTML
+      </a>
+      <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
+        Жива сторінка звітів
+      </a>
+    </div>
+  `,
+
+  // 4.2 Короткий опис усіх задач
+  "tasks-common": `
+    <h2>Перелік завдань практичної роботи №4</h2>
+    <ol>
+      <li>Визначення знака введеного числа (додатнє, від’ємне, нуль).</li>
+      <li>Використання конструкції <code>switch</code> для визначення пори року за номером.</li>
+      <li>Реалізація авторизації для користувачів Admin / User з перевіркою пароля.</li>
+      <li>Функції <code>makeTransaction</code>, <code>getShippingMessage</code> та ін.</li>
+      <li>Функція <code>checkForSpam()</code> та перевірка наявності слова <em>spam/sale</em> у рядку.</li>
+      <li>Робота з масивами: <code>filterArray()</code>, <code>makeArray()</code>.</li>
+      <li>Операції над 1D масивами: пошук максимуму/мінімуму, перестановка, сортування вставками.</li>
+      <li>Робота з двовимірним масивом, розбиття на додатні та від’ємні елементи.</li>
+      <li>Створення інтерактивного калькулятора з основними арифметичними операціями, відсотком, коренем та піднесенням до степеня.</li>
+    </ol>
+    <p>Далі для кожного завдання наведено фрагмент коду та приклад результату.</p>
+  `,
+
+  task1: `
+    <h2>Завдання 1 — визначення знака числа</h2>
+
+    <h3>Умова</h3>
+    <pre>
+Ввести число через prompt, зберегти у змінну, вивести його у console.
+Перевірити: чи є число додатним, від’ємним або дорівнює нулю.
+Вивести результат за допомогою alert().
+    </pre>
+
+    <h3>Фрагмент коду</h3>
+    ${codeBlock(`
+  function task1() {
+  const valueStr = prompt("Введіть число (може бути від’ємним, додатним або 0):");
+
+  if (valueStr === null) {
+    alert("Ввід скасовано");
+    console.log("Ввід скасовано");
+    return;
+  }
+
+  const value = Number(valueStr);
+
+  if (Number.isNaN(value)) {
+    alert("Помилка: введено не число");
+    console.log("Помилка: введено не число");
+    return;
+  }
+
+  console.log(\`Ви ввели число: \${value}\`);
+
+  if (value > 0) {
+    alert("Число додатнє");
+    console.log("Число додатнє");
+  } else if (value < 0) {
+    alert("Число від’ємне");
+    console.log("Число від’ємне");
+  } else {
+    alert("Число дорівнює нулю");
+    console.log("Число дорівнює нулю");
+  }
+}`)}
+
+    <h3>Результат</h3>
+    <p>Скріншот консолі:</p>
+    <img src="lab4/1z.png" alt="Console для завдання 1" />
+    <img src="lab4/1z(1).png" alt="Console для завдання 1" />
+    <img src="lab4/1z(2).png" alt="Console для завдання 1" />
+  `,
+
+
+  task2: `
+  <h2>Завдання 2 — номер сезону (switch)</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Змінна number може набувати 4 значення: '1', '2', '3' або '4' 
+(запитуй це значення у користувача через prompt). 
+ 
+Якщо вона має значення '1', то у змінну result запишіть 'зима',
+якщо має значення '2' - 'весна' і так далі.
+Розв'яжіть завдання через switch-case.
+Не забудьте про дефолтне значення, на випадок, якщо користувач введе в prompt щось інше. 
+Значення змінної result виведіть в консоль.
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`function task2() {
+  const number = prompt("Введіть число від 1 до 4 (1-зима, 2-весна, 3-літо, 4-осінь):");
+
+  let result;
+
+  switch (number) {
+    case "1":
+      result = "зима";
+      break;
+    case "2":
+      result = "весна";
+      break;
+    case "3":
+      result = "літо";
+      break;
+    case "4":
+      result = "осінь";
+      break;
+    default:
+      result = "невірне значення, очікувалось 1–4";
+  }
+
+  console.log("Результат для number=" + number + ": " + result);
+}`)}
+
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab4/2z.png" alt="Console завдання 2">
+
+  <img src="lab4/2z(1).png" alt="Console завдання 2">
+
+  <img src="lab4/2z(2).png" alt="Console завдання 2">
+`,
+
+  task3: `
+  <h2>Завдання 3 — Admin та User з паролями</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Є Admin  та User, з відповідними паролями.   (Об’явити , проініцілізувати) 
+
+Написати програмний код, який запитуватиме у користувача  логін (використати  prompt) 
+і виводить результат в консоль браузера, використовуючи шаблонний рядок.
+
+ Після цього додайте перевірку введеного користувачем значення: 
+	якщо відвідувач вводить " Admin  ",  то prompt запитує пароль. 
+  У випадку вдалої ідентифікації в alert вивести « Hello, Admin  ;
+	якщо нічого не ввели або натиснули Cancel, то вивести в alert рядок  " Cancelled ";
+	в іншому випадку вивести в alert рядок " I don't know you"
+
+Теж саме виконати з User
+
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+
+  ${codeBlock(`const ADMIN_LOGIN = "Admin";
+const ADMIN_PASSWORD = "admin123";
+
+const USER_LOGIN = "User";
+const USER_PASSWORD = "user123";
+
+function loginAdminOrUser() {
+  const login = prompt("Введіть логін (Admin або User):");
+
+  console.log(\`Користувач ввів логін: \${login}\`);
+
+  if (login === null || login === "") {
+    alert("Cancelled");
+    console.log("→ Ввід логіну скасовано");
+    return;
+  }
+
+  if (login === ADMIN_LOGIN) {
+    console.log("Розпізнано користувача: Admin");
+    const password = prompt("Введіть пароль для Admin:");
+    console.log(\`Admin ввів пароль: \${password}\`);
+
+    if (password === null || password === "") {
+      alert("Cancelled");
+      console.log("→ Ввід пароля скасовано");
+    } else if (password === ADMIN_PASSWORD) {
+      alert("Hello, Admin");
+      console.log("→ Успішний вхід як Admin");
+    } else {
+      alert("I don't know you");
+      console.log("→ Невірний пароль для Admin");
+    }
+
+  } else if (login === USER_LOGIN) {
+    console.log("Розпізнано користувача: User");
+    const password = prompt("Введіть пароль для User:");
+    console.log(\`User ввів пароль: \${password}\`);
+
+    if (password === null || password === "") {
+      alert("Cancelled");
+      console.log("→ Ввід пароля скасовано");
+    } else if (password === USER_PASSWORD) {
+      alert("Hello, User");
+      console.log("→ Успішний вхід як User");
+    } else {
+      alert("I don't know you");
+      console.log("→ Невірний пароль для User");
+    }
+
+  } else {
+    alert("I don't know you");
+    console.log(\`→ Невідомий логін: \${login}\`);
+  }
+}`)}
+
+<h3>Результат (скріншот Console)</h3>
+  <img src="lab4/3z.png" alt="Console завдання 2">
+  <img src="lab4/3z(1).png" alt="Console завдання 2">
+  <img src="lab4/3z(2).png" alt="Console завдання 2">
+  <img src="lab4/3z(3).png" alt="Console завдання 2">
+  `,
+
+task4: `
+  <h2>Завдання 4</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Станція з продажу ремонтних дроїдів.
+
+Оголоси функцію makeTransaction, яка очікує два параметри, значення яких будуть задаватися під час її виклику: 
+• quantity— перший параметр, число, що містить кількість замовлених дроїдів • pricePerDroid — другий параметр, 
+число, що містить вартість одного дроїда
+
+Напиши  код функції так, щоб вона повертала рядок з повідомленням про покупку ремонтних дроїдів: 
+"You ordered <quantity> droids worth <totalPrice> credits!", де:
+• <quantity> — це кількість замовлених дроїдів 
+• <totalPrice> — це загальна вартість замовлення, тобто вартість усіх замовлених дроїдів
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+    ${codeBlock(`// ===== ЗАВДАННЯ 4: makeTransaction =====
+
+function makeTransaction(quantity, pricePerDroid) {
+  const totalPrice = quantity * pricePerDroid;
+  return \`You ordered \${quantity} droids worth \${totalPrice} credits!\`;
+}`)}
+
+  <h3>Виклик функції</h3>
+    ${codeBlock(`    // ЗАВДАННЯ 4
+    function runTask4_1() {
+      clearAndTitle("Завдання 4.1: makeTransaction");
+      console.log(makeTransaction(3, 2000));
+      console.log(makeTransaction(5, 1000));
+    }`)}
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab4/4.png" alt="Console завдання 4">
+`,
+
+task5: `
+  <h2>Завдання 5 — Перевірка на спам</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Функція checkForSpam(message) приймає рядок (параметр message), 
+перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. 
+Слова в рядку параметра message можуть бути в довільному регістрі, наприклад SPAM або sAlE.
+
+Доповни код функції таким чином, що:
+•	Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
+•	Якщо в рядку відсутні заборонені слова, функція повертає буль false
+
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`// ===== ЗАВДАННЯ 5.1: checkForSpam =====
+function checkForSpam(message) {
+  const lower = message.toLowerCase();
+  return lower.includes("spam") || lower.includes("sale");
+}`)}
+
+  <h3>Виклик функції</h3>
+  ${codeBlock(`// ЗАВДАННЯ 5
+function runTask5_1() {
+  clearAndTitle("Завдання 5: checkForSpam");
+  const msg = prompt("Введіть повідомлення для перевірки на spam/sale:");
+  if (msg === null) return;
+  console.log("Повідомлення:", msg);
+  console.log("Містить спам:", checkForSpam(msg));
+}`)}
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab4/5z.png" alt="Console завдання 5">
+  <img src="lab4/5z(1).png" alt="Console завдання 5">
+`,
+
+task6: ` 
+  <h2>Завдання 6 — filterArray</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers)
+та значення (value) як параметри. Функція повинна повертати новий масив лише тих чисел 
+із масиву numbers, які більші за value.
+
+Усередині функції:
+• Створи порожній масив, у який будеш додавати підходящі числа.
+• Використай цикл для ітерації кожного елемента масиву numbers.
+• Використовуй умовний оператор if для перевірки елементів.
+Поверни новий масив з усіма підходящими числами.
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`// ===== ЗАВДАННЯ 6.1: filterArray =====
+
+function filterArray(numbers, value) {
+  const result = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > value) {
+      result.push(numbers[i]);
+    }
+  }
+
+  return result;
+}`)}
+
+  <h3>Виклик функції</h3>
+  ${codeBlock(`// ЗАВДАННЯ 6.1
+function runTask6_1() {
+  clearAndTitle("Завдання 6.1: filterArray");
+  console.log(filterArray([1, 5, 10, -2, 8], 3));
+}`)})
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab4/6z.png" alt="Console завдання 6.1">
+`,
+
+task7: `
+  <h2>Завдання 7 — Масив A, Масив B та сортування вставками</h2>
+
+  <h3>Умова</h3>
+  <pre>
+1. Користувач задає розмір одновимірного масиву A.
+   Масив A заповнюється випадковими числами.
+
+2. Побудувати масив B за формулою:
+      bᵢ = max * aᵢ
+   де max — максимальний елемент масиву A.
+
+3. Вивести вхідний масив A та вихідний масив B.
+
+4. Виконати сортування масиву B методом вставки (за зменшенням).
+
+5. Усі дії виконати через окремі функції.
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`// ===== ЗАВДАННЯ 7 =====
+
+// Генерація одновимірного масиву
+function generateArray(n) {
+  const arr = [];
+  for (let i = 0; i < n; i++) {
+    arr.push(Math.floor(Math.random() * 20) - 10);
+  }
+  return arr;
+}
+
+// Пошук максимального елемента
+function getMax(arr) {
+  return Math.max(...arr);
+}
+
+// Побудова масиву B: bᵢ = max * aᵢ
+function buildB(arrA, max) {
+  const B = [];
+  for (let i = 0; i < arrA.length; i++) {
+    B.push(arrA[i] * max);
+  }
+  return B;
+}
+
+// Сортування вставками за зменшенням
+function insertionSortDesc(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let current = arr[i];
+    let j = i - 1;
+
+    while (j >= 0 && arr[j] < current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    arr[j + 1] = current;
+  }
+  return arr;
+}
+
+// Головна функція запуску
+function runTaskArrayAB() {
+  const n = Number(prompt("Введіть кількість елементів масиву A:"));
+
+  if (!n || n <= 0) {
+    alert("Некоректне значення");
+    return;
+  }
+
+  const A = generateArray(n);
+  console.log("Масив A:", A);
+
+  const maxA = getMax(A);
+  console.log("Максимальний елемент A:", maxA);
+
+  const B = buildB(A, maxA);
+  console.log("Масив B (до сортування):", B);
+
+  const sortedB = insertionSortDesc([...B]);
+  console.log("Масив B (після сортування вставками за зменшенням):", sortedB);
+}
+
+// Обгортка для звіту
+function runTask7() {
+  clearAndTitle("Завдання 7 – Масив A, Масив B, сортування вставками");
+  runTaskArrayAB();
+}`)}
+
+  <h3>Виклик функції</h3>
+  ${codeBlock(`    function runTask7() {
+      clearAndTitle("Завдання 7: Масив A → Масив B → Сортування вставками");
+      runTaskArrayAB();
+    }`)}
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab4/7z.png" alt="Console завдання 7">
+`,
+
+task8: `
+  <h2>Завдання 8 — двовимірний масив, додатні/від’ємні</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Є двовимірний масив додатніх і від’ємних чисел (оголосити і проініціалізувати
+генератором випадкових чисел). Вивести його у Console браузера.
+
+Створити два масиви:
+• масив додатніх чисел
+• масив від’ємних чисел
+
+Третій елемент у додатньому масиві замінити на від’ємне значення,
+яке буде введено за допомогою prompt().
+
+Після заміни вивести отримані масиви у Console браузера.
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`// Генерація двовимірного масиву випадкових чисел
+function generate2DArray(rows, cols, min = -10, max = 10) {
+  const matrix = [];
+  for (let i = 0; i < rows; i++) {
+    const row = [];
+    for (let j = 0; j < cols; j++) {
+      const value = Math.floor(Math.random() * (max - min + 1)) + min;
+      row.push(value);
+    }
+    matrix.push(row);
+  }
+  return matrix;
+}
+
+// ===== ЗАВДАННЯ 8 =====
+function task8() {
+  const rows = 3;
+  const cols = 4;
+  const matrix = generate2DArray(rows, cols);
+
+  console.log("Початковий двовимірний масив:");
+  console.log(matrix);
+
+  const positives = [];
+  const negatives = [];
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      const value = matrix[i][j];
+      if (value >= 0) {
+        positives.push(value);
+      } else {
+        negatives.push(value);
+      }
+    }
+  }
+
+  console.log("Масив додатніх чисел:", positives);
+  console.log("Масив від’ємних чисел:", negatives);
+
+  if (positives.length >= 3) {
+    const negValueStr = prompt(
+      "Введіть від’ємне число для заміни третього елемента додатнього масиву:"
+    );
+    let negValue = Number(negValueStr);
+
+    if (Number.isNaN(negValue) || negValue >= 0) {
+      alert("Некоректне значення. Поставимо -1.");
+      negValue = -1;
+    }
+
+    positives[2] = negValue;
+  } else {
+    console.log(
+      "У масиві додатніх чисел менше 3 елементів — заміна неможлива."
+    );
+  }
+
+  console.log(
+    "Масив додатніх чисел після заміни третього елемента:",
+    positives
+  );
+}`)}
+
+  <h3>Виклик функції</h3>
+  ${codeBlock(`// ЗАВДАННЯ 8
+function runTask8() {
+  clearAndTitle("Завдання 8: двовимірний масив");
+  task8();
+}`)}
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab4/8z.png" alt="Console завдання 8">
+`,
+
+
+  // 4.4 приклад для калькулятора (завдання 9)
+  task9: `
+  <h2>Завдання 9 — Калькулятор</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Реалізувати калькулятор мовою JavaScript.
+
+Обов'язкові операції:
+  • додавання (+)
+  • віднімання (-)
+  • множення (*)
+  • ділення (/)
+  • остача від ділення (%)
+  • корінь квадратний (√)
+  • піднесення до степеня (xʸ)
+
+Кнопки з цифрами та знаками операцій мають бути доступні
+в інтерфейсі вікна.
+  </pre>
+
+  <h3>HTML-розмітка калькулятора</h3>
+  ${codeBlock(`<div id="calculator-icon">
+  🧮
+</div>
+
+<div id="calculator-modal" class="hidden">
+  <div class="modal-content">
+    <span id="calc-close">&times;</span>
+
+    <h3 style="text-align:center;">Калькулятор</h3>
+
+    <input type="text" class="display" id="display" readonly>
+
+    <div class="buttons">
+      <button class="clear" id="clear">C</button>
+      <button id="backspace">⌫</button>
+      <button class="operator" data-op="%">%</button>
+
+      <button data-num="7">7</button>
+      <button data-num="8">8</button>
+      <button data-num="9">9</button>
+      <button class="operator" data-op="/">/</button>
+
+      <button data-num="4">4</button>
+      <button data-num="5">5</button>
+      <button data-num="6">6</button>
+      <button class="operator" data-op="*">*</button>
+
+      <button data-num="1">1</button>
+      <button data-num="2">2</button>
+      <button data-num="3">3</button>
+      <button class="operator" data-op="-">-</button>
+
+      <button data-num="0">0</button>
+      <button data-num=".">.</button>
+      <button class="operator" data-op="+">+</button>
+      <button class="operator" id="sqrt">√</button>
+
+      <button class="operator" id="pow">xʸ</button>
+      <button class="equal" id="equal">=</button>
+    </div>
+  </div>
+</div>`)}  
+
+  <h3>Фрагмент JavaScript-коду</h3>
+  ${codeBlock(`// === ЛОГІКА КАЛЬКУЛЯТОРА ===
+const display = document.getElementById("display");
+
+let firstOperand = null;
+let operator = null;
+let waitingForSecondOperand = false;
+
+function inputDigit(digit) {
+  if (waitingForSecondOperand) {
+    display.value = digit;
+    waitingForSecondOperand = false;
+  } else {
+    display.value = display.value === "0" ? digit : display.value + digit;
+  }
+}
+
+function inputDot() {
+  if (waitingForSecondOperand) {
+    display.value = "0.";
+    waitingForSecondOperand = false;
+    return;
+  }
+  if (!display.value.includes(".")) {
+    display.value += ".";
+  }
+}
+
+function handleOperator(nextOperator) {
+  const inputValue = parseFloat(display.value);
+
+  if (operator && waitingForSecondOperand) {
+    operator = nextOperator;
+    return;
+  }
+
+  if (firstOperand === null && !Number.isNaN(inputValue)) {
+    firstOperand = inputValue;
+  } else if (operator) {
+    const result = calculate(firstOperand, inputValue, operator);
+    display.value = String(result);
+    firstOperand = result;
+  }
+
+  operator = nextOperator;
+  waitingForSecondOperand = true;
+}
+
+function calculate(a, b, op) {
+  switch (op) {
+    case "+": return a + b;
+    case "-": return a - b;
+    case "*": return a * b;
+    case "/": return b === 0 ? "Error" : a / b;
+    case "%": return a % b;
+    case "^": return Math.pow(a, b);
+    default: return b;
+  }
+}
+
+function clearAll() {
+  display.value = "";
+  firstOperand = null;
+  operator = null;
+  waitingForSecondOperand = false;
+}
+
+function backspace() {
+  display.value = display.value.slice(0, -1);
+}
+
+// Обробка цифр
+document.querySelectorAll("button[data-num]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const value = btn.getAttribute("data-num");
+    if (value === ".") inputDot();
+    else inputDigit(value);
+  });
+});
+
+// Обробка операторів (+ - * / %)
+document.querySelectorAll("button.operator[data-op]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    handleOperator(btn.getAttribute("data-op"));
+  });
+});
+
+// √
+document.getElementById("sqrt").addEventListener("click", () => {
+  const value = parseFloat(display.value);
+  if (Number.isNaN(value)) return;
+
+  if (value < 0) {
+    display.value = "Error";
+    return;
+  }
+
+  const result = Math.sqrt(value);
+  display.value = String(result);
+
+  firstOperand = result;
+  operator = null;
+  waitingForSecondOperand = false;
+});
+
+// xʸ
+document.getElementById("pow").addEventListener("click", () => {
+  const inputValue = parseFloat(display.value);
+  if (Number.isNaN(inputValue)) return;
+
+  if (firstOperand === null) {
+    firstOperand = inputValue;
+  } else if (operator) {
+    const result = calculate(firstOperand, inputValue, operator);
+    display.value = String(result);
+    firstOperand = result;
+  }
+
+  operator = "^";
+  waitingForSecondOperand = true;
+});
+
+// =
+document.getElementById("equal").addEventListener("click", () => {
+  const inputValue = parseFloat(display.value);
+
+  if (operator === null || waitingForSecondOperand) return;
+
+  const result = calculate(firstOperand, inputValue, operator);
+  display.value = String(result);
+  firstOperand = null;
+  operator = null;
+  waitingForSecondOperand = false;
+});
+
+document.getElementById("clear").addEventListener("click", clearAll);
+document.getElementById("backspace").addEventListener("click", backspace);`)}
+
+  <h3>Виклик/Інтеграція в інтерфейс</h3>
+  <pre>
+Іконка 🧮 відображається у правому нижньому куті сторінки.
+При кліку по ній відкривається модальне вікно з калькулятором.
+Кнопки з цифрами та операціями керують вмістом поля display.
+  </pre>
+
+  <h3>Результат (скріншот інтерфейсу)</h3>
+  <img src="lab4/calc.png" alt="Інтерфейс калькулятора, завдання 9">
+`,
+
+
+  // 4.5 Висновки
+  final4: `
+    <h2>Висновки по практичній роботі №4</h2>
+    <p>
+      У ході виконання роботи було реалізовано дев’ять задач мовою JavaScript:
+      перевірку введеного числа, роботу з конструкцією <code>switch</code>,
+      просту авторизацію, набір функцій для обробки рядків і масивів,
+      а також обробку одновимірних і двовимірних масивів.
+    </p>
+    <p>
+      Окремо реалізовано інтерактивний калькулятор, який демонструє
+      використання обробників подій, роботи з DOM та базових арифметичних
+      операцій в JavaScript. Отримані навички можна застосовувати при
+      створенні більш складних веб-застосунків.
+    </p>
+  `
+  };
+
+  const lab5 = {
+theme5: `
+  <h2>Практична робота №5</h2>
+
+  <h3>Тема</h3>
+  <p>
+    <b>ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK.
+    СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ. ПЕРЕБИРАЮЧІ МЕТОДИ МАСИВУ.</b>
+  </p>
+
+  <h3>Мета</h3>
+  <p>
+    Придбати практичні навички роботи з об'єктами, методами об'єкта,
+    масивами об'єктів, callback-функціями, стрілочними функціями та перебираючими
+    методами масиву. Реалізація програм засобами мови JavaScript.
+  </p>
+
+  <h3>Постановка задачі</h3>
+  <p>
+    У звітному HTML-документі розмістити тему та постановку задачі лабораторної
+    роботи №5. Розмістити програмний код і результати виконання завдань
+    згідно таблиці варіантів.  
+    Студенти з непарними номерами виконують варіанти:
+    <b>1, 3, 5, 7, 9, 10</b>.  
+  </p>
+
+  <p>
+    Використовуючи сценарій JavaScript, виконати завдання згідно таблиці №1,
+    а також завдання №2.
+  </p>
+
+    <h3 class="muted">Розташування</h3>
+
+  <div class="link-buttons">
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій застосунку</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка застосунку</a>
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій звітів</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка звітв</a>
+    <a class="btn" href="https://github.com/MaixmK/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій із самостійною роботою</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка самостійної роботи</a>
+    <a class="btn" href="https://www.figma.com/design/S3tM6vTLjBuZINItOYO71u/Untitled?node-id=0-1&t=nIZJZHqGCv9BfEZN-1" target="_blank" rel="noopener">Figma макет</a>
+  </div>
+`,
+
+
+  task1_1: `
+  <h2>Завдання 1.1 — createProduct та callback-функції</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Напишіть наступні функції:
+createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. 
+Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у 
+властивість id та викликає коллбек передаючи йому створений об'єкт.
+
+logProduct(product) - колббек що приймає об'єкт продукту і логуючий його в консоль
+logTotalPrice(product) - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`// Лічильник для унікальних id
+let productIdCounter = 1;
+
+function createProduct(obj, callback) {
+  const product = {
+    ...obj,
+    id: productIdCounter++,
+  };
+
+  callback(product);
+}
+
+function logProduct(product) {
+  console.log("Продукт:", product);
+}
+
+function logTotalPrice(product) {
+  const total = product.price * product.quantity;
+  console.log(
+    \`Загальна вартість товару "\${product.name}": \${product.quantity} × \${product.price} = \${total}\`
+  );
+}
+
+// ===== Приклади виклику =====
+
+createProduct(
+  { name: "Ноутбук", price: 25000, quantity: 2 },
+  logProduct
+);
+
+createProduct(
+  { name: "Мишка", price: 800, quantity: 3 },
+  logTotalPrice
+);`)}
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab5/1z.png" alt="Console завдання 1.1">
+`,
+
+
+  task1_2: `
+  <h2>Завдання 1.2 — обробка об’єкта medicines (стрілочні функції)</h2>
+
+  <h3>Умова</h3>
+  <pre>
+З об'єкту medicines потрібно отримати масив   в якому будуть лише назви препаратів.
+
+З масиву  потрібно прибрати медикаменти , в яких строк зберігання  уже пройшов . 
+У новому масиві відсортувати медикаменти  у хронологічному порядку.
+  Результат вивести у консоль.
+Застосувати стрілочні функції
+
+const medicines = {
+    Агалгін: new Date("2022-05-01"),
+    Ношпа: new Date("2025-07-02"),
+    Альфахолін: new Date("2024-12-21"),
+    Аспірин: new Date("2022-08-15"),
+    Аспаркам: new Date("2024-04-18"),
+   };
+
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`const medicines = {
+  Агалгін: new Date("2022-05-01"),
+  Ношпа: new Date("2026-09-02"),
+  Альфахолін: new Date("2024-12-21"),
+  Аспірин: new Date("2026-08-15"),
+  Аспаркам: new Date("2024-04-18"),
+};
+
+const now = new Date();
+
+const names = Object.keys(medicines);
+console.log("Усі препарати:", names);
+
+const validMedicines = names.filter(name => medicines[name] > now);
+console.log("Дійсні препарати:", validMedicines);
+
+const sortedMedicines = validMedicines.sort(
+  (a, b) => medicines[a] - medicines[b]
+);
+
+console.log("Відсортовані по даті:", sortedMedicines);
+`)}
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab5/2z.png" alt="Console завдання 1.2">
+`,
+
+  task1_3: `
+  <h2>Завдання 1.3 — Масив фруктів: знижка 20% та додавання ID</h2>
+
+  <h3>Умова</h3>
+  <pre>
+  Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+  Зробіть знижку 20 % на всі фрукти у масиві
+  Надайте ід для кожного продукту
+
+  const fruits = [
+    { name: "apple", price: 200 },
+    { name: "orange", price: 300 },
+    { name: "grapes", price: 750 },
+  ];
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
+];
+
+const transformFruits = (arr) =>
+  arr.map((fruit, index) => ({
+    ...fruit,
+    id: index + 1,           // додаємо id
+    price: fruit.price * 0.8 // робимо знижку 20%
+  }));
+
+// Виклик функції
+const updatedFruits = transformFruits(fruits);
+
+console.log("Оригінальний масив:", fruits);
+console.log("Масив зі знижкою і ID:", updatedFruits);`)}
+
+  <h3>Результат (скріншот Console)</h3>
+  <img src="lab5/3z.png" alt="Console завдання 1.3">
+`,
+
+  task1_4: `
+    <h2>Завдання 1.4 — Клас <code>Client</code> з приватними властивостями</h2>
+
+    <h3>Умова</h3>
+    <p>
+      Напиши клас Client який створює об'єкт
+      з властивостями login email
+      Оголоси приватні властивості #login #email,
+      доступ до яких зроби через геттер та сеттер login email
+    </p>
+
+    <h3>Код класу</h3>
+    ${codeBlock(`class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+
+  // getter login
+  get login() {
+    return this.#login;
+  }
+
+  // setter login
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  // getter email
+  get email() {
+    return this.#email;
+  }
+
+  // setter email
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+}`)}
+
+    <h3>Перевірка роботи класу</h3>
+    ${codeBlock(`const client1 = new Client("m_kutaev", "maksim@example.com");
+
+console.log(client1.login);  // m_kutaev
+console.log(client1.email);  // maksim@example.com
+
+client1.login = "max_k";
+client1.email = "max@gmail.com";
+
+console.log(client1.login);  // max_k
+console.log(client1.email);  // max@gmail.com`)}
+
+    <h3>Пояснення</h3>
+    <ul>
+      <li><code>#login</code> та <code>#email</code> — приватні поля, до них не можна звернутися напряму поза класом.</li>
+      <li>Геттери <code>login</code> / <code>email</code> повертають поточні значення приватних полів.</li>
+      <li>Сеттери <code>login</code> / <code>email</code> дозволяють оновлювати значення цих полів.</li>
+    </ul>
+    <h3>Результат (скріншот Console)</h3>
+    <img src="lab5/4z.png" alt="Console завдання 1.4">
+  `,
+
+  task1_5: `
+  <h2>Завдання 2.3 — Підрахунок кількості тегів у масиві твітів</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Повернути об'єкт, у якому вказано кількість кожного тегу.
+Очікуваний результат:
+{ js: 3, nodejs: 3, html: 2, css: 2, react: 2 }
+
+Вхідні дані:
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+  </pre>
+
+  <h3>Фрагмент коду</h3>
+  ${codeBlock(`const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+// Функція підрахунку тегів
+const countTags = (arr) =>
+  arr
+    .flatMap(tweet => tweet.tags)
+    .reduce((acc, tag) => {
+      acc[tag] = (acc[tag] || 0) + 1;
+      return acc;
+    }, {});
+
+// Виклик
+console.log(countTags(tweets));`)}
+
+  <h3>Очікуваний результат (Console)</h3>
+  <pre>
+{ 
+  js: 3,
+  nodejs: 3,
+  html: 2,
+  css: 2,
+  react: 2
+}
+  </pre>
+
+  <h3>Скріншот Console</h3>
+  <img src="lab5/5z.png" alt="Console Завдання 2.3">
+`,
+
+task1_6: `
+    <h2>Завдання 1.6 — Перевірка правильності дужок</h2>
+
+    <p>
+      Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn)  і перевіряє правильність закриття дужок () {} []
+      Якщо рядок містить коректний код функція повертає true.
+      В іншому випадку повертає false
+    </p>
+
+    <p>
+      Функція повинна повернути <code>true</code>, якщо всі дужки відкриті й закриті
+      коректно і в правильному порядку, і <code>false</code> — якщо є помилка.
+      Для розв’язання використовується стек.
+    </p>
+
+    <h3>Код функції <code>checkBrackets</code></h3>
+    ${codeBlock(`function checkBrackets(str) {
+  const stack = [];
+  const pairs = {
+    ")": "(",
+    "}": "{",
+    "]": "["
+  };
+
+  for (let char of str) {
+    // відкривальні дужки кладемо у стек
+    if (["(", "{", "["].includes(char)) {
+      stack.push(char);
+    }
+    // для закривальних — перевіряємо відповідність
+    else if ([")", "}", "]"].includes(char)) {
+      const last = stack.pop();
+      if (last !== pairs[char]) {
+        return false; // неправильна пара
+      }
+    }
+  }
+
+  // якщо стек порожній — усі дужки закриті правильно
+  return stack.length === 0;
+}`)}
+
+    <h3>Приклади виклику та результати</h3>
+    ${codeBlock(`console.log(checkBrackets("function test() { return [1, 2, 3]; }"));
+// true
+
+console.log(checkBrackets("if (a > b { console.log(a); }"));
+// false
+
+console.log(checkBrackets("([{}])"));
+// true
+
+console.log(checkBrackets("([)]"));
+// false`)}
+
+    <p>
+      У прикладах видно, що для коректно вкладених дужок функція повертає
+      <code>true</code>, а для неправильних поєднань (наприклад, <code>"([)]"</code>)
+      — <code>false</code>. Такий підхід зручний для базової перевірки синтаксису
+      дужок у JS-коді.
+    </p>
+
+    <h3>Скріншот Console</h3>
+  <img src="lab5/6z.png" alt="Console Завдання 2.3">
+  `,
+
+  // Завдання 2
+task2_1: `
+  <h2>Завдання 2.1 — Отримати один масив значень із вкладених масивів</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Дано масив об'єктів. Необхідно створити новий масив, який містить 
+усі значення з масивів values кожного об'єкта, зібрані в один масив.
+
+Очікуваний результат:
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  </pre>
+
+  <h3>Вхідні дані</h3>
+  ${codeBlock(`const data = [
+  { id: 1, values: [1, 2, 3] },
+  { id: 2, values: [4, 5, 6] },
+  { id: 3, values: [7, 8, 9] },
+];`)}
+
+  <h3>Код розв'язання</h3>
+  ${codeBlock(`const result = data.flatMap(item => item.values);
+
+console.log(result);`)}
+
+  <h3>Пояснення</h3>
+  <p>
+    Використано метод <code>flatMap()</code>, який послідовно:
+  </p>
+  <ul>
+    <li>проходить по кожному елементу масиву (<code>map</code>)</li>
+    <li>дістає значення поля <code>values</code></li>
+    <li>"розгладжує" вкладений масив в один рівень (<code>flat</code>)</li>
+  </ul>
+
+  <h3>Результат</h3>
+  ${codeBlock(`[1, 2, 3, 4, 5, 6, 7, 8, 9]`)}
+
+  <p>
+    Таким чином, усі значення з вкладених масивів об'єднані в один суцільний масив.
+  </p>
+  <h3>Скріншот Console</h3>
+  <img src="lab5/2_1.png" alt="Console Завдання 2.3">
+`,
+
+task2_2: `
+  <h2>Завдання 2.2 — Перевірити, чи всі елементи масиву парні</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Дано масив чисел: [2, 4, 6, 8, 10].
+Необхідно перевірити, чи є кожен елемент масиву парним.
+
+Очікуваний результат:
+true
+  </pre>
+
+  <h3>Вхідні дані</h3>
+  ${codeBlock(`const numbers = [2, 4, 6, 8, 10];`)}
+
+  <h3>Код розв'язання</h3>
+  ${codeBlock(`const allEven = numbers.every(num => num % 2 === 0);
+
+console.log(allEven); // true`)}
+
+  <h3>Пояснення</h3>
+  <p>
+    Використано метод <code>every()</code>, який перевіряє,
+    чи всі елементи масиву задовольняють умову. 
+    Умова для кожного елемента:
+  </p>
+
+  ${codeBlock(`num % 2 === 0  // число є парним`)}
+
+  <p>
+    Оскільки всі числа в масиві парні, результат буде:
+    <code>true</code>.
+  </p>
+
+  <h3>Результат</h3>
+  ${codeBlock(`true`)}
+
+    <h3>Скріншот Console</h3>
+  <img src="lab5/2_2.png" alt="Console Завдання 2.3">
+`,
+
+
+task2_3: `
+  <h2>Завдання 2.3 — Сортування масиву рядків за алфавітом</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Дано масив рядків:
+["banana", "orange", "apple", "pear"]
+
+Потрібно відсортувати його у алфавітному порядку.
+
+Очікуваний результат:
+["apple", "banana", "orange", "pear"]
+  </pre>
+
+  <h3>Вхідні дані</h3>
+  ${codeBlock(`const stringArray = ["banana", "orange", "apple", "pear"];`)}
+
+  <h3>Код розв'язання</h3>
+  ${codeBlock(`const sorted = stringArray.slice().sort();
+
+console.log(sorted);
+// ["apple", "banana", "orange", "pear"]`)}
+
+  <h3>Пояснення</h3>
+  <p>
+    Для розв'язання використано метод <code>sort()</code>, який
+    сортує рядки у алфавітному порядку.
+    Метод <code>slice()</code> застосовано для створення копії масиву,
+    щоб не змінювати оригінальний масив <code>stringArray</code>.
+  </p>
+
+  <h3>Результат</h3>
+  ${codeBlock(`["apple", "banana", "orange", "pear"]`)}
+
+  <h3>Скріншот Console</h3>
+  <img src="lab5/2_3.png" alt="Console Завдання 2.3">
+`,
+
+task2_4: `
+  <h2>Завдання 2.4 — Клас Calculator з підтримкою method chaining</h2>
+
+  <h3>Умова</h3>
+  <pre>
+Розробити клас Calculator, який дозволяє виконувати арифметичні
+операції над числом за допомогою методів класу, підтримуючи
+ланцюжкові виклики (method chaining).
+
+Вимоги:
+- number(value) — встановлює початкове значення.
+- getResult() — повертає поточний результат.
+- add(value) — додає value.
+- subtract(value) — віднімає value.
+- divide(value) — ділить на value, при value = 0 → помилка.
+- multiply(value) — множить на value.
+- Усі методи, крім getResult(), повертають this.
+  </pre>
+
+  <h3>Код класу Calculator</h3>
+  ${codeBlock(`class Calculator {
+  constructor() {
+    this.value = 0;
+  }
+
+  // Встановити початкове значення
+  number(value) {
+    this.value = value;
+    return this;
+  }
+
+  // Повернути результат
+  getResult() {
+    return this.value;
+  }
+
+  // Додавання
+  add(value) {
+    this.value += value;
+    return this;
+  }
+
+  // Віднімання
+  subtract(value) {
+    this.value -= value;
+    return this;
+  }
+
+  // Ділення
+  divide(value) {
+    if (value === 0) {
+      throw new Error("Неможливо виконати ділення на 0!");
+    }
+    this.value /= value;
+    return this;
+  }
+
+  // Множення
+  multiply(value) {
+    this.value *= value;
+    return this;
+  }
+}`)}
+
+
+  <h3>Приклад використання</h3>
+  ${codeBlock(`const calc = new Calculator();
+
+const result = calc
+  .number(10)   // 10
+  .add(5)       // 15
+  .subtract(3)  // 12
+  .multiply(4)  // 48
+  .divide(2)    // 24
+  .getResult(); // повертає 24
+
+console.log(result); // 24`)}
+
+  <h3>Пояснення</h3>
+  <p>
+    Кожен метод класу (add, subtract, multiply, divide, number)
+    повертає <code>this</code>, що дозволяє будувати ланцюжки викликів.
+    Метод <code>getResult()</code> просто повертає поточне значення, 
+    не змінюючи його. У методі <code>divide()</code> реалізована
+    перевірка на ділення на нуль.
+  </p>
+
+  <h3>Результат (Console)</h3>
+  <img src="lab5/2_4.png" alt="Console Завдання 2.4">
+`,
+
+
+final5: `
+  <h2>Висновки</h2>
+
+  <p>
+    У ході виконання лабораторної роботи №5 було закріплено та розширено знання 
+    щодо роботи з об'єктами та масивами об'єктів у JavaScript, а також засвоєно 
+    важливі концепції сучасного програмування — callback-функції, стрілочні функції 
+    та перебираючі методи масиву.
+  </p>
+
+  <p>
+    Під час виконання індивідуальних завдань було реалізовано:
+  </p>
+
+  <ul>
+    <li>створення та модифікація об’єктів, доступ до їх властивостей і методів;</li>
+    <li>використання приватних полів класів;</li>
+    <li>формування нових масивів на основі існуючих даних;</li>
+    <li>використання callback-функцій для обробки даних;</li>
+    <li>застосування стрілочних функцій у різних контекстах;</li>
+    <li>робота з методами <code>map</code>, <code>filter</code>, <code>reduce</code>, 
+        <code>every</code>, <code>flatMap</code>, <code>sort</code>;</li>
+    <li>створення власних класів із підтримкою ланцюжкових викликів (method chaining).</li>
+  </ul>
+
+  <p>
+    Виконання роботи дозволило краще зрозуміти підходи до структуризації даних,
+    побудови більш гнучких і масштабованих рішень, а також ознайомило 
+    з особливостями функціонального стилю програмування в JavaScript.
+  </p>
+
+  <p>
+    Отже, поставленої мети лабораторної роботи досягнуто: отримані практичні 
+    навички роботи з об'єктами, масивами об'єктів, методами їх обробки, callback-функціями, 
+    стрілочними функціями та перебираючими методами масивів.
+  </p>
+`,
+
+};
+
+  const lab6 = {
+theme6: `
+  <h2>Лабораторна робота №6</h2>
+  <h3>Тема:</h3>
+
+  <p>
+    Прототипи та класи в JavaScript. Робота з DOM-деревом. 
+    Обробка подій, об’єкт події та делегування подій.
+  </p>
+
+  <h3>Мета роботи:</h3>
+  <p>
+    Закріпити на практиці принципи об’єктно-орієнтованого програмування 
+    в JavaScript, навчитися створювати класи, працювати з прототипами 
+    та наслідуванням. Ознайомитися з можливостями DOM-API, 
+    навчитися змінювати структуру HTML-документа засобами JavaScript, 
+    опрацьовувати події, використовувати об’єкт події та застосовувати 
+    делегування подій для оптимізації роботи інтерфейсу.
+  </p>
+
+  <h3>Місце розташування звіту:</h3>
+  <p>Звіт розміщено у структурі сайту практичних робіт студента групи ІК-33 Кутаєва Максима.</p>
+
+  <h3>Місце розташування виконаних програм:</h3>
+  <p>Усі виконані скрипти підключено до відповідних розділів лабораторної роботи та доступні у вихідному коді звіту.</p>
+`,
+  };
 
 
   function setActiveTab(id) {
@@ -1686,18 +3129,29 @@ body {
     sideMenuLab1.style.display = (labId === 1) ? 'block' : 'none';
     sideMenuLab2.style.display = (labId === 2) ? 'block' : 'none';
     sideMenuLab3.style.display = (labId === 3) ? 'block' : 'none';
+    sideMenuLab4.style.display = (labId === 4) ? 'block' : 'none';
+    sideMenuLab5.style.display = (labId === 5) ? 'block' : 'none';
+    sideMenuLab6.style.display = (labId === 6) ? 'block' : 'none';
 
-    if (labId !== 1 && labId !== 2 && labId !== 3) {
+    
+
+    if (![1, 2, 3, 4, 5, 6].includes(labId)) {
       content.innerHTML = `<h2>Лабораторна робота №${labId}</h2><p>Матеріали будуть додані пізніше.</p>`;
       return;
     }
 
     const secDefault =
-      labId === 1 ? 'theme' :
-      labId === 2 ? 'sel-tags' :
-      'theme3';
+    labId === 1 ? 'theme' :
+    labId === 2 ? 'sel-tags' :
+    labId === 3 ? 'theme3' :
+    labId === 4 ? 'theme4' :
+    labId === 5 ? 'theme5' :
+    labId === 6 ? 'theme6' :
+    null;
+
 
     const sec = section || secDefault;
+
 
     if (labId === 1) {
       setActivePill(sideMenuLab1, sec);
@@ -1708,7 +3162,18 @@ body {
     } else if (labId === 3) {
       setActivePill(sideMenuLab3, sec);
       content.innerHTML = lab3[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
+    } else if (labId === 4) {
+      setActivePill(sideMenuLab4, sec);
+      content.innerHTML = lab4[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
+    } else if (labId === 5) {
+      setActivePill(sideMenuLab5, sec);
+      content.innerHTML = lab5[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
+    } else if (labId === 6) {
+      setActivePill(sideMenuLab6, sec);
+      content.innerHTML = lab6[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
     }
+
+
   }
 
   function navigate(labId, sec, push = true) {
@@ -1726,10 +3191,18 @@ body {
   tabs.forEach(btn => {
     btn.addEventListener('click', () => {
       const id = Number(btn.dataset.lab);
-      const firstSec = (id === 1) ? 'theme' : (id === 2 ? 'sel-tags' : null);
+      const firstSec =
+      id === 1 ? 'theme' :
+      id === 2 ? 'sel-tags' :
+      id === 3 ? 'theme3' :
+      id === 4 ? 'theme4' :
+      id === 5 ? 'theme5' :
+      id === 6 ? 'theme6' :
+      null;
       navigate(id, firstSec, true);
     });
   });
+
 
   
   sideMenuLab1.addEventListener('click', (e) => {
@@ -1756,19 +3229,72 @@ body {
   if (btn.classList.contains('pill') && btn.dataset.section) {
     navigate(3, btn.dataset.section, true);
   }
+  });
+
+  sideMenuLab4.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pill'); 
+    if (!btn) return;
+    navigate(4, btn.dataset.section, true);
+  });
+
+sideMenuLab5.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+
+  if (btn.classList.contains("pill-parent")) {
+    const key = btn.dataset.toggle;
+    const sub = sideMenuLab5.querySelector(`.sub-menu[data-parent="${key}"]`);
+    if (sub) sub.classList.toggle("open");
+    return;
+  }
+
+  if (btn.dataset.section) {
+    navigate(5, btn.dataset.section, true);
+  }
 });
+
+sideMenuLab6.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+
+  if (btn.classList.contains("pill-parent")) {
+    const key = btn.dataset.toggle;
+    const sub = sideMenuLab6.querySelector(`.sub-menu[data-parent="${key}"]`);
+    if (sub) sub.classList.toggle("open");
+    return;
+  }
+
+  if (btn.dataset.section) {
+    navigate(6, btn.dataset.section, true);
+  }
+});
+
 
 
   window.addEventListener('popstate', () => {
     const params = new URLSearchParams(location.search);
     const lab = Number(params.get('lab')) || 1;
-    const sec = params.get('sec') || (lab === 1 ? 'theme' : lab === 2 ? 'sel-tags' : null);
+    const sec = params.get('sec') ||
+      (lab === 1 ? 'theme' :
+      lab === 2 ? 'sel-tags' :
+      lab === 3 ? 'theme3' :
+      lab === 4 ? 'theme4' :
+      lab === 5 ? 'theme5' :
+      lab === 6 ? 'theme6' :
+  null);
     renderLab(lab, sec);
   });
   (function boot() {
     const params = new URLSearchParams(location.search);
     const lab = Number(params.get('lab')) || 1;
-    const sec = params.get('sec') || (lab === 1 ? 'theme' : lab === 2 ? 'sel-tags' : null);
+    const sec = params.get('sec') ||
+      (lab === 1 ? 'theme' :
+      lab === 2 ? 'sel-tags' :
+      lab === 3 ? 'theme3' :
+      lab === 4 ? 'theme4' :
+      lab === 5 ? 'theme5' :
+      lab === 6 ? 'theme6' :
+      null);
     renderLab(lab, sec);
   })();
 })();
