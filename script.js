@@ -6,6 +6,8 @@
   const sideMenuLab4 = document.getElementById('sideMenuLab4');
   const sideMenuLab5 = document.getElementById('sideMenuLab5');
   const sideMenuLab6 = document.getElementById('sideMenuLab6');
+  const sideMenuLab7 = document.getElementById('sideMenuLab7');
+
   const content = document.getElementById('content');
 
   const codeBlock = (s) =>
@@ -1127,30 +1129,12 @@ body {
       <p><b>Тема розробки:</b> адаптивний веб-застосунок <i>«Конфігуратор ПК»</i>.</p>
 
       <h3 class="muted">Розташування (репозиторії)</h3>
-      <div class="link-buttons">
-        <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
-          Репозиторій власного веб-застосунку
-        </a>
-        <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
-          Репозиторій HTML звітного документа
-        </a>
-        <a class="btn" href="https://github.com/MaixmK/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
-          Репозиторій самостійних робіт
-        </a>
-      </div>
-
-      <h3 class="muted">Розташування (живі сторінки)</h3>
-      <div class="link-buttons">
-        <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
-          Жива сторінка власного сайту
-        </a>
-        <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
-          Жива сторінка HTML звітного документа
-        </a>
-        <a class="btn" href="https://maixmk.github.io/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">
-          Жива сторінка самостійних робіт
-        </a>
-      </div>
+  <div class="link-buttons">
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій застосунку</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка застосунку</a>
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій звітів</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка звітв</a>
+  </div>
     `,
     site:`
     <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">
@@ -2491,9 +2475,6 @@ theme5: `
     <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка застосунку</a>
     <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій звітів</a>
     <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка звітв</a>
-    <a class="btn" href="https://github.com/MaixmK/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій із самостійною роботою</a>
-    <a class="btn" href="https://maixmk.github.io/IK-33_INDEPENDENT-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка самостійної роботи</a>
-    <a class="btn" href="https://www.figma.com/design/S3tM6vTLjBuZINItOYO71u/Untitled?node-id=0-1&t=nIZJZHqGCv9BfEZN-1" target="_blank" rel="noopener">Figma макет</a>
   </div>
 `,
 
@@ -3086,8 +3067,8 @@ final5: `
 
 };
 
-  const lab6 = {
-theme6: `
+const lab6 = {
+  theme6: `
   <h2>Лабораторна робота №6</h2>
   <h3>Тема:</h3>
 
@@ -3107,12 +3088,528 @@ theme6: `
   </p>
 
   <h3>Місце розташування звіту:</h3>
-  <p>Звіт розміщено у структурі сайту практичних робіт студента групи ІК-33 Кутаєва Максима.</p>
-
+  <div class="link-buttons">
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій застосунку</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appWEB-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка застосунку</a>
+    <a class="btn" href="https://github.com/MaixmK/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025" target="_blank" rel="noopener">Репозиторій звітів</a>
+    <a class="btn" href="https://maixmk.github.io/IK-33_appRECORD-Kutaiev-Maksym-FIOT-2025/" target="_blank" rel="noopener">Жива сторінка звітв</a>
+  </div>
   <h3>Місце розташування виконаних програм:</h3>
   <p>Усі виконані скрипти підключено до відповідних розділів лабораторної роботи та доступні у вихідному коді звіту.</p>
 `,
+
+  task1: `
+  <h2>Завдання №1</h2>
+
+  <p>
+    У звітному HTML-документі створити розмітку, що складається з тексту,
+    кнопки та поля введення. Натискання на кнопку <b>SHOW ME</b>
+    має виводити значення з поля введення у консолі.
+  </p>
+
+  <h3>Робота програми</h3>
+  <div class="task1-demo" style="background:#8cc689;padding:15px;display:inline-block;">
+    <div style="font-weight:bold;font-size:24px;margin-bottom:10px;">ЗАВДАННЯ №1</div>
+    <button id="showMeBtn">SHOW ME</button>
+    <input id="showMeInput" type="text" placeholder="Введіть будь-який текст" />
+  </div>
+
+  <p style="margin-top:15px;">
+    При натисканні на кнопку текст із поля введення з’являється у <b>Console</b> браузера.
+  </p>
+
+  <h3>Фрагмент програмного коду</h3>
+  ${codeBlock(`// HTML-розмітка
+<div class="task1-demo">
+  <h2>ЗАВДАННЯ №1</h2>
+  <button id="showMeBtn">SHOW ME</button>
+  <input id="showMeInput" type="text" placeholder="Введіть будь-який текст" />
+</div>
+
+// JavaScript-обробник події
+document.addEventListener('click', (event) => {
+  if (event.target.id === 'showMeBtn') {
+    const input = document.getElementById('showMeInput');
+    console.log('Введене значення:', input.value);
+  }
+});`)}
+`,
+task2: `
+  <h2>ЗАВДАННЯ 2</h2>
+
+  <p>
+    У звітному HTML-документі створити html-розмітку, що складається з тексту,
+    кнопки та поля введення. Кнопка <b>«Приховати»</b> ховає введений текст,
+    замінюючи його на зірочки. Кнопка змінює свій текст на <b>«Розкрити»</b>.
+    При повторному натисканні текст знову стає доступним, а кнопка повертається
+    до попереднього стану.
+  </p>
+
+  <div class="task3-demo" style="background:#8cc689;padding:15px;display:inline-block;">
+    <div style="font-weight:bold;font-size:24px;margin-bottom:10px;">ЗАВДАННЯ 3</div>
+
+    <input
+      id="passwordInput"
+      type="text"
+      placeholder="пароль"
+      style="padding:4px 6px;border:1px solid #999;outline:none;"
+    />
+    <button id="passwordToggleBtn">Приховати</button>
+  </div>
+
+  <h3>Фрагмент програмного коду</h3>
+  ${codeBlock(`// HTML-розмітка
+<div class="task3-demo">
+  <h2>ЗАВДАННЯ 3</h2>
+  <input id="passwordInput" type="text" placeholder="пароль" />
+  <button id="passwordToggleBtn">Приховати</button>
+</div>
+
+// JavaScript — приховати / розкрити введений текст
+document.addEventListener('click', (event) => {
+  if (event.target.id === 'passwordToggleBtn') {
+    const input = document.getElementById('passwordInput');
+    if (!input) return;
+
+    if (input.type === 'text') {
+      input.type = 'password';
+      event.target.textContent = 'Розкрити';
+    } else {
+      input.type = 'text';
+      event.target.textContent = 'Приховати';
+    }
+  }
+});`)}
+`,
+task3: `
+  <h2>ЗАВДАННЯ 5</h2>
+
+  <p>
+    У звітному HTML-документі створено розмітку з використанням
+    селектора класу <code>class="taskTitle"</code> для тексту та
+    селектора ідентифікатора <code>id="place"</code> для зеленого блоку.
+    На об’єкт <code>window</code> додано слухач події <code>click</code>,
+    який визначає, чи користувач клікнув у зелений прямокутник.
+  </p>
+
+  <div style="background:#8cc689;padding:15px;display:inline-block;">
+    <div class="taskTitle" style="font-weight:bold;font-size:24px;margin-bottom:10px;">
+      ЗАВДАННЯ 5
+    </div>
+
+    <div
+      id="place"
+      style="
+        width:120px;
+        height:260px;
+        background:green;
+        margin-top:10px;
+      "
+    ></div>
+  </div>
+
+  <p style="margin-top:10px;">
+    Якщо користувач клацає по зеленому прямокутнику або його вмісту —
+    у консолі виводиться <b>true</b>. Якщо клацнуто в будь-якому іншому
+    місці вікна — виводиться <b>false</b>.
+  </p>
+
+  <h3>Фрагмент програмного коду</h3>
+  ${codeBlock(`<!-- HTML -->
+<div class="taskTitle">ЗАВДАННЯ 5</div>
+<div id="place"></div>
+
+<!-- JavaScript -->
+window.addEventListener('click', function (event) {
+  var place = document.getElementById('place');
+  if (!place) return;
+
+  // Перевіряємо, чи клік був всередині блоку з id="place"
+  var clickedInside = place.contains(event.target);
+
+  console.log(clickedInside);
+});`)}
+`,
+task4: `
+  <h2>ЗАВДАННЯ 7</h2>
+
+  <p>
+    У звітному HTML-документі міститься список категорій
+    <code>&lt;ul id="categories"&gt;</code>. Необхідно за допомогою JavaScript:
+  </p>
+
+  <ol>
+    <li>Порахувати і вивести в консоль кількість категорій (елементів <code>li.item</code>).</li>
+    <li>Для кожного елемента <code>li.item</code> вивести заголовок категорії (тег <code>&lt;h2&gt;</code>) та кількість вкладених елементів <code>&lt;li&gt;</code>.</li>
+  </ol>
+
+  <p>Для виконання потрібно використати метод <b>forEach()</b> та властивості навігації DOM.</p>
+
+  <div style="background:#8cc689;padding:15px;display:inline-block;">
+    <div style="font-weight:bold;font-size:24px;margin-bottom:10px;">ЗАВДАННЯ 7</div>
+
+    <ul id="categories" style="padding-left:20px;">
+      <li class="item">
+        <h2>Animals</h2>
+        <ul>
+          <li>Cat</li>
+          <li>Hamster</li>
+          <li>Horse</li>
+          <li>Parrot</li>
+        </ul>
+      </li>
+
+      <li class="item">
+        <h2>Products</h2>
+        <ul>
+          <li>Bread</li>
+          <li>Prasley</li>
+          <li>Cheese</li>
+        </ul>
+      </li>
+
+      <li class="item">
+        <h2>Technologies</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <h3>Фрагмент програмного коду</h3>
+
+  ${codeBlock(`// Знаходимо список категорій
+const categoriesList = document.querySelector('#categories');
+
+// 1. Кількість категорій
+const categoryItems = categoriesList.querySelectorAll('.item');
+console.log('Number of categories:', categoryItems.length);
+
+// 2. Для кожного елемента li.item вивести назву категорії і кількість елементів
+categoryItems.forEach(item => {
+  const title = item.querySelector('h2').textContent;         // Заголовок категорії
+  const elementsCount = item.querySelectorAll('ul li').length; // Кількість вкладених li
+
+  console.log('Category:', title);
+  console.log('Elements:', elementsCount);
+});`)}
+
+  <p style="margin-top:10px;">
+    У консолі браузера будуть виведені дані в такому форматі:
+    <br/><br/>
+    Number of categories: 3<br/>
+    Category: Animals — Elements: 4<br/>
+    Category: Products — Elements: 3<br/>
+    Category: Technologies — Elements: 5
+  </p>
+`,
+
+task5: `
+  <h2>ЗАВДАННЯ 5</h2>
+
+  <p>
+    Потрібно реалізувати скрипт керування формою логіна. Обробка має
+    виконуватися за подією <code>submit</code>, без перезавантаження сторінки,
+    з перевіркою заповнення полів і виведенням даних у консоль.
+  </p>
+
+  <div style="background:#8cc689;padding:15px;display:inline-block;">
+    <div style="font-weight:bold;font-size:24px;margin-bottom:10px;">ЗАВДАННЯ 5</div>
+
+    <form class="login-form">
+      <label>
+        Email
+        <input type="email" name="email" />
+      </label>
+      <br />
+      <label>
+        Password
+        <input type="password" name="password" />
+      </label>
+      <br />
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+
+  <h3>Фрагмент програмного коду</h3>
+
+  ${codeBlock(`// Завдання 5 — Визначення кліку всередині блоку з id="place"
+window.addEventListener('click', function (event) {
+  const place = document.getElementById('place');
+  if (!place) return;
+
+  const clickedInside = place.contains(event.target);
+  console.log(clickedInside);
+});
+
+
+document.addEventListener('submit', (event) => {
+  // Перевіряємо, що сабміт саме форми логіна
+  const form = event.target;
+  if (!form.classList.contains('login-form')) return;
+
+  // 2. Забороняємо перезавантаження сторінки
+  event.preventDefault();
+
+  // 4. Дістаємо елементи форми через form.elements
+  const { email, password } = form.elements;
+
+  const emailValue = email.value.trim();
+  const passwordValue = password.value.trim();
+
+  // 3. Перевірка заповненості полів
+  if (!emailValue || !passwordValue) {
+    alert('All form fields must be filled in');
+    return;
+  }
+
+  // 4. Формуємо об'єкт з даними
+  const formData = {
+    email: emailValue,
+    password: passwordValue,
   };
+
+  // 5. Виводимо в консоль і очищуємо форму
+  console.log(formData);
+  form.reset();
+});
+`)}
+
+  <p style="margin-top:10px;">
+    При сабміті форми:
+    <br />— якщо якесь поле порожнє, зʼявляється <b>alert</b> із текстом
+    <code>'All form fields must be filled in'</code>;
+    <br />— якщо обидва поля заповнені, в <b>Console</b> виводиться об’єкт
+    з даними <code>{ email, password }</code>, а форма очищається методом
+    <code>reset()</code>.
+  </p>
+`,
+
+task6: `
+  <h2>ЗАВДАННЯ 6</h2>
+
+  <p>
+    Потрібно реалізувати скрипт, який змінює колір фону документа через
+    інлайн-стиль <code>&lt;body&gt;</code> під час натискання кнопки
+    <code>.change-color</code>, а також записує обраний колір у
+    <code>&lt;span class="color"&gt;</code>.
+  </p>
+
+  <div style="background:#8cc689;padding:15px;display:inline-block;">
+    <div style="font-weight:bold;font-size:24px;margin-bottom:10px;">ЗАВДАННЯ 6</div>
+
+    <div class="widget">
+      <p>Background color: <span class="color">-</span></p>
+      <button type="button" class="change-color">Change color</button>
+    </div>
+  </div>
+
+  <h3>Фрагмент програмного коду</h3>
+
+  ${codeBlock(`// Функція для генерації випадкового hex-кольору
+function getRandomHexColor() {
+  return \`#\${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}\`;
+}
+
+// Делегування події — працює навіть у динамічному DOM
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('change-color')) {
+    const newColor = getRandomHexColor();
+
+    // змінюємо фон body
+    document.body.style.backgroundColor = newColor;
+
+    // записуємо новий колір у span.color
+    const span = document.querySelector('.color');
+    if (span) span.textContent = newColor;
+  }
+});`)}
+`,
+task7: `
+  <h2>ЗАВДАННЯ 7</h2>
+
+  <p>
+    Створити колекцію кольорових div-елементів за введеною кількістю. 
+    Кнопка <b>Create</b> генерує нову колекцію, а <b>Destroy</b> очищає її.
+  </p>
+
+  <div id="controls" style="margin-bottom: 10px;">
+    <input type="number" min="1" max="100" step="1" />
+    <button type="button" data-create>Create</button>
+    <button type="button" data-destroy>Destroy</button>
+  </div>
+
+  <div id="boxes" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+
+  <h3>Фрагмент програмного коду</h3>
+
+  ${codeBlock(`function getRandomHexColor() {
+  return \`#\${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}\`;
+}
+
+function createBoxes(amount) {
+  const boxesContainer = document.getElementById('boxes');
+  if (!boxesContainer) return;
+
+  boxesContainer.innerHTML = '';
+  const boxes = [];
+  let size = 30;
+
+  for (let i = 0; i < amount; i++) {
+    const box = document.createElement('div');
+    box.style.width = \`\${size}px\`;
+    box.style.height = \`\${size}px\`;
+    box.style.backgroundColor = getRandomHexColor();
+    boxes.push(box);
+    size += 10;
+  }
+
+  boxesContainer.append(...boxes);
+}
+
+function destroyBoxes() {
+  const boxesContainer = document.getElementById('boxes');
+  if (!boxesContainer) return;
+  boxesContainer.innerHTML = '';
+}
+
+document.addEventListener('click', (event) => {
+  if (event.target.matches('#controls [data-create]')) {
+    const controls = document.getElementById('controls');
+    const input = controls.querySelector('input[type="number"]');
+    const value = Number(input.value.trim());
+
+    if (value < 1 || value > 100) {
+      alert('Value must be between 1 and 100');
+      return;
+    }
+
+    createBoxes(value);
+    input.value = '';
+  }
+
+  if (event.target.matches('#controls [data-destroy]')) {
+    destroyBoxes();
+  }
+});`)}
+`,
+
+task8: `
+  <h2>Завдання 3. Делегування подій у каталозі WEB-застосунку</h2>
+
+  <p>
+    У власному WEB-застосунку реалізовано механізм <b>делегування подій</b> 
+    для роботи з колекцією елементів каталогу. Картки товарів генеруються 
+    динамічно, тому обробник подій встановлюється не на кожну картку, 
+    а на спільний контейнер <code>#grid</code>.
+  </p>
+
+  <p>
+    При натисканні кнопки <b>«Детальніше»</b> обробник через делегування 
+    визначає, по якій картці натиснули, і відкриває модальне вікно 
+    з інформацією про товар.
+  </p>
+
+  <h3>Фрагмент програмного коду</h3>
+
+  ${codeBlock(`
+// Делегування подій у каталозі
+el.onclick = (e) => {
+  const btn = e.target.closest('button[data-action]');
+  if (!btn) return;
+
+  const id = btn.dataset.id;
+  const action = btn.dataset.action;
+
+  if (action === 'details') {
+    openModal(id);
+  }
+};
+
+// Модальне вікно
+function openModal(id) {
+  const p = window.PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+
+  document.querySelector('#m-img').src = p.img;
+  document.querySelector('#m-title').textContent = p.title;
+  document.querySelector('#m-desc').textContent = p.desc;
+
+  document.querySelector('#modal').showModal();
+}
+  `)}
+  
+  <p>
+    Таким чином, вимога виконана: при виборі елемента каталогу за допомогою 
+    делегування подій відкривається модальне вікно з описом товару.
+  </p>
+
+   <h3>Результат </h3>
+  <img src="lab6/modal.png" alt="modal">
+  <img src="lab6/modal2.png" alt="modal" width="800">
+
+`,
+conclusion6: `
+  <h2>Висновок</h2>
+  <p>
+    У ході виконання лабораторної роботи було опрацьовано принципи роботи з
+    DOM-деревом та подіями в JavaScript, а також застосування делегування подій
+    у динамічних інтерфейсах. Створено інтерактивні елементи: роботу з формами,
+    приховування тексту, зміну стилів, визначення області кліку, генерацію
+    елементів і керування їх відображенням.
+  </p>
+  <p>
+    Особливу увагу приділено делегуванню подій, що дозволяє ефективно працювати
+    з великою кількістю створюваних елементів та оптимізує структуру коду.
+    Реалізація модального вікна у WEB-застосунку демонструє практичне
+    застосування цього підходу.
+  </p>
+  <p>
+    У результаті роботи були закріплені навички маніпуляції DOM-елементами,
+    роботи зі стилями, валідатором форм, створення інтерактивних UI-компонентів.
+    Мету лабораторної роботи досягнуто.
+  </p>
+`,
+
+  
+};
+
+const lab7 = {
+  pagination: `
+    <h2>Завдання. Реалізація пагінації в каталозі товарів</h2>
+    <p class="taskTitle">
+      У власному WEB-каталозі реалізовано пагінацію: товари показуються
+      сторінками по 6 елементів, є кнопки переходу між сторінками (prev/next та номери сторінок).
+    </p>
+
+    <h3>Фрагмент JavaScript-коду пагінації</h3>
+    <pre class="code">${codeBlock(`
+const PER_PAGE = 6;
+let currentPage = 1;
+
+// ... функції renderPagination, render, обробник кліків по .page-btn ...
+`)}</pre>
+
+    <h3>Фрагмент HTML-розмітки</h3>
+    <pre class="code">${codeBlock(`
+<div id="grid" class="products-grid"></div>
+<div id="pagination" class="pagination"></div>
+`)}</pre>
+
+    <h3>Результат роботи</h3>
+    <p>На скриншоті видно, як каталог розбитий на сторінки, а під товарами виводяться кнопки пагінації.</p>
+    <img src="img/lab7-pagination.png" alt="Пагінація в каталозі">
+  `
+};
 
 
   function setActiveTab(id) {
@@ -3132,10 +3629,11 @@ theme6: `
     sideMenuLab4.style.display = (labId === 4) ? 'block' : 'none';
     sideMenuLab5.style.display = (labId === 5) ? 'block' : 'none';
     sideMenuLab6.style.display = (labId === 6) ? 'block' : 'none';
+    sideMenuLab7.style.display = (labId === 7) ? 'block' : 'none';
 
     
 
-    if (![1, 2, 3, 4, 5, 6].includes(labId)) {
+    if (![1, 2, 3, 4, 5, 6, 7].includes(labId)) {
       content.innerHTML = `<h2>Лабораторна робота №${labId}</h2><p>Матеріали будуть додані пізніше.</p>`;
       return;
     }
@@ -3147,6 +3645,7 @@ theme6: `
     labId === 4 ? 'theme4' :
     labId === 5 ? 'theme5' :
     labId === 6 ? 'theme6' :
+    labId === 7 ? 'theme7' :
     null;
 
 
@@ -3169,6 +3668,9 @@ theme6: `
       setActivePill(sideMenuLab5, sec);
       content.innerHTML = lab5[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
     } else if (labId === 6) {
+      setActivePill(sideMenuLab6, sec);
+      content.innerHTML = lab6[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
+    } else if (labId === 7) {
       setActivePill(sideMenuLab6, sec);
       content.innerHTML = lab6[sec] || `<p>Розділ “${sec}” у підготовці.</p>`;
     }
@@ -3198,6 +3700,7 @@ theme6: `
       id === 4 ? 'theme4' :
       id === 5 ? 'theme5' :
       id === 6 ? 'theme6' :
+      id === 7 ? 'theme7' :  
       null;
       navigate(id, firstSec, true);
     });
@@ -3269,6 +3772,22 @@ sideMenuLab6.addEventListener("click", (e) => {
   }
 });
 
+sideMenuLab7.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+
+  if (btn.classList.contains("pill-parent")) {
+    const key = btn.dataset.toggle;
+    const sub = sideMenuLab7.querySelector(`.sub-menu[data-parent="${key}"]`);
+    if (sub) sub.classList.toggle("open");
+    return;
+  }
+
+  if (btn.dataset.section) {
+    navigate(7, btn.dataset.section, true);
+  }
+});
+
 
 
   window.addEventListener('popstate', () => {
@@ -3281,6 +3800,7 @@ sideMenuLab6.addEventListener("click", (e) => {
       lab === 4 ? 'theme4' :
       lab === 5 ? 'theme5' :
       lab === 6 ? 'theme6' :
+      lab === 7 ? 'theme7' :
   null);
     renderLab(lab, sec);
   });
@@ -3294,7 +3814,155 @@ sideMenuLab6.addEventListener("click", (e) => {
       lab === 4 ? 'theme4' :
       lab === 5 ? 'theme5' :
       lab === 6 ? 'theme6' :
+      lab === 7 ? 'theme7' :
       null);
     renderLab(lab, sec);
   })();
 })();
+
+
+
+
+document.addEventListener('click', (event) => {
+  // Завдання 1 — SHOW ME
+  if (event.target.id === 'showMeBtn') {
+    const input = document.getElementById('showMeInput');
+    if (!input) return;
+    console.log('Введене значення:', input.value);
+  }
+
+  // Завдання 2 — Приховати / Розкрити
+  if (event.target.id === 'passwordToggleBtn') {
+    const input = document.getElementById('passwordInput');
+    if (!input) return;
+
+    if (input.type === 'text') {
+      // Приховуємо текст
+      input.type = 'password';
+      event.target.textContent = 'Розкрити';
+    } else {
+      // Розкриваємо текст
+      input.type = 'text';
+      event.target.textContent = 'Приховати';
+    }
+  }
+});
+
+// Завдання 5 — Визначення кліку всередині блоку з id="place"
+window.addEventListener('click', function (event) {
+  const place = document.getElementById('place');
+  if (!place) return;
+
+  const clickedInside = place.contains(event.target);
+  console.log(clickedInside);
+});
+
+
+document.addEventListener('submit', (event) => {
+  // Перевіряємо, що сабміт саме форми логіна
+  const form = event.target;
+  if (!form.classList.contains('login-form')) return;
+
+  // 2. Забороняємо перезавантаження сторінки
+  event.preventDefault();
+
+  // 4. Дістаємо елементи форми через form.elements
+  const { email, password } = form.elements;
+
+  const emailValue = email.value.trim();
+  const passwordValue = password.value.trim();
+
+  // 3. Перевірка заповненості полів
+  if (!emailValue || !passwordValue) {
+    alert('All form fields must be filled in');
+    return;
+  }
+
+  // 4. Формуємо об'єкт з даними
+  const formData = {
+    email: emailValue,
+    password: passwordValue,
+  };
+
+  // 5. Виводимо в консоль і очищуємо форму
+  console.log(formData);
+  form.reset();
+});
+
+
+// Завдання 6 Функція для генерації випадкового hex-кольору
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+// зміна кольору фону
+document.addEventListener('click', (event) => {
+  // Перевіряємо клік по кнопці .change-color
+  if (event.target.classList.contains('change-color')) {
+    const newColor = getRandomHexColor();
+
+    // Змінюємо фон тіла документа
+    document.body.style.backgroundColor = newColor;
+
+    // Виводимо колір у span.color
+    const colorSpan = document.querySelector('.color');
+    if (colorSpan) {
+      colorSpan.textContent = newColor;
+    }
+  }
+});
+
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+function createBoxes(amount) {
+  const boxesContainer = document.getElementById('boxes');
+  if (!boxesContainer) return;
+
+  boxesContainer.innerHTML = '';
+  const boxes = [];
+  let size = 30;
+
+  for (let i = 0; i < amount; i++) {
+    const box = document.createElement('div');
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    boxes.push(box);
+    size += 10;
+  }
+
+  boxesContainer.append(...boxes);
+}
+
+function destroyBoxes() {
+  const boxesContainer = document.getElementById('boxes');
+  if (!boxesContainer) return;
+  boxesContainer.innerHTML = '';
+}
+
+document.addEventListener('click', (event) => {
+  if (event.target.matches('#controls [data-create]')) {
+    const controls = document.getElementById('controls');
+    const input = controls.querySelector('input[type="number"]');
+    const value = Number(input.value.trim());
+
+    if (value < 1 || value > 100) {
+      alert('Value must be between 1 and 100');
+      return;
+    }
+
+    createBoxes(value);
+    input.value = '';
+  }
+
+  if (event.target.matches('#controls [data-destroy]')) {
+    destroyBoxes();
+  }
+});
