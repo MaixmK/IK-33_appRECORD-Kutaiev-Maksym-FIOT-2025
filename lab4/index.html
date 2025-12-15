@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Меню завдань JS</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .hint {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .group {
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    }
+    .group h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    button {
+      margin: 4px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>Меню JavaScript-завдань</h1>
+  <div class="hint">
+    Відкрий консоль (<b>F12 → Console</b>) і натискай кнопки нижче, щоб побачити результат.
+  </div>
+
+  <div class="group">
+    <h2>Непарні завдання</h2>
+    <button onclick="runTask1()">Завдання 1: знак числа</button>
+    <button onclick="runTask2()">Завдання 2: номер сезону</button>
+    <button onclick="runTask3()">Завдання 3: Admin / User логін</button>
+    <button onclick="runTask4_1()">4.1: makeTransaction</button>
+    <button onclick="runTask5_1()">5.1: checkForSpam</button>
+    <button onclick="runTask6_1()">6.1: filterArray</button>
+    <button onclick="runTask7()">Завдання 7: масив + сортування</button>
+    <button onclick="runTask8()">Завдання 8: двовимірний масив</button>
+  </div>
+
+  <!-- Підключаємо файл з усіма твоїми функціями -->
+  <script src="tasks.js"></script>
+
+  <!-- Обгортки для запуску завдань з кнопок -->
+  <script>
+    function clearAndTitle(title) {
+      console.clear();
+      console.log("=== " + title + " ===");
+    }
+
+    // ЗАВДАННЯ 1
+    function runTask1() {
+      clearAndTitle("Завдання 1: визначення знака числа");
+      task1();
+    }
+
+    // ЗАВДАННЯ 2
+    function runTask2() {
+      clearAndTitle("Завдання 2: номер сезону");
+      task2();
+    }
+
+    // ЗАВДАННЯ 3
+    function runTask3() {
+      clearAndTitle("Завдання 3: Admin та User");
+      loginAdminOrUser();
+    }
+
+    // ЗАВДАННЯ 4.1
+    function runTask4_1() {
+      clearAndTitle("Завдання 4.1: makeTransaction");
+      console.log(makeTransaction(3, 2000));
+      console.log(makeTransaction(5, 1000));
+    }
+
+    // ЗАВДАННЯ 4.2
+    function runTask4_2() {
+      clearAndTitle("Завдання 4.2: getShippingMessage");
+      console.log(getShippingMessage("Ukraine", 5000, 700));
+      console.log(getShippingMessage("Poland", 3000, 500));
+    }
+
+    // ЗАВДАННЯ 5
+    function runTask5_1() {
+      clearAndTitle("Завдання 5.1: checkForSpam");
+      const msg = prompt("Введіть повідомлення для перевірки на spam/sale:");
+      if (msg === null) return;
+      console.log("Повідомлення:", msg);
+      console.log("Містить спам:", checkForSpam(msg));
+    }
+
+    // ЗАВДАННЯ 6
+    function runTask6_1() {
+      clearAndTitle("Завдання 6.1: filterArray");
+      console.log(filterArray([1, 5, 10, -2, 8], 3));
+    }
+
+    // ЗАВДАННЯ 7 (варіант 1)
+    function runTask7() {
+      clearAndTitle("Завдання 7: Масив A → Масив B → Сортування вставками");
+      runTaskArrayAB();
+    }
+
+
+    // ЗАВДАННЯ 8
+    function runTask8() {
+      clearAndTitle("Завдання 8: двовимірний масив");
+      task8();
+    }
+  </script>
+</body>
+</html>
